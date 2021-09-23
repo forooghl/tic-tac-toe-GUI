@@ -1,3 +1,4 @@
+from random import choice
 import tkinter
 from tkinter import *
 from tkinter import Button, Tk
@@ -46,8 +47,25 @@ def gameTableSize():
 
 def playerIcon():
     DestroyFrame()
-    print("O/X \n*/# \n!/?")
+    XO1 = Button(app , text = "X / O" , command = lambda choice = "X/O" : setIcon(choice))
+    XO1.pack()
+    XO2 = Button(app , text = "* / #" , command = lambda choice = "*/#" : setIcon(choice))
+    XO2.pack()
+    XO3 = Button(app , text = "! / ?" , command = lambda choice = "!/?" : setIcon(choice))
+    XO3.pack()
     BackButton()
+
+def setIcon(choice):
+    global player1 , player2
+    if choice == "X/O":
+        player1 = "X"
+        player2 = "O"
+    elif choice == "*/#":
+        player1 = "*"
+        player2 = "#"
+    elif choice == "!/?":
+        player1 = "!"
+        player2 = "?"
 
 def aboutUs():
     DestroyFrame()
