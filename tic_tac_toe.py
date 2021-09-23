@@ -51,7 +51,9 @@ def playerIcon():
 
 def aboutUs():
     DestroyFrame()
-    print("Foroogh L \npython._.group")
+    text = Text(app)
+    text.insert(INSERT ,"Foroogh L \ninstagram: python._.group")
+    text.pack()
     BackButton()
 
 main = Tk()
@@ -61,6 +63,9 @@ main.resizable(width = False, height = False)
 
 app = Frame(main)
 app.pack()
+
+player1 = "X"
+player2 = "Y"
 
 menu()
 main.mainloop()
