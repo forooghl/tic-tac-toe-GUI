@@ -10,6 +10,21 @@ def DestroyFrame():
 
     app.pack_forget
 
+#diable all button
+def ButtDis():
+    global XOButton1 , XOButton2 , XOButton3 
+    global XOButton4 , XOButton5 , XOButton6 
+    global XOButton7 , XOButton8 , XOButton9
+    XOButton1['state'] = DISABLED
+    XOButton2['state'] = DISABLED
+    XOButton3['state'] = DISABLED
+    XOButton4['state'] = DISABLED
+    XOButton5['state'] = DISABLED
+    XOButton6['state'] = DISABLED
+    XOButton7['state'] = DISABLED
+    XOButton8['state'] = DISABLED
+    XOButton9['state'] = DISABLED
+
 #Back button function
 def Back():
     DestroyFrame()
@@ -147,37 +162,53 @@ def Game(choice):
 
 def WhoWin():
     if 1 in Xlist and 2 in Xlist and 3 in Xlist:
+        ButtDis()
         print("X win")
     elif 4 in Xlist and 5 in Xlist and 6 in Xlist:
+        ButtDis()
         print("X win")
     elif 7 in Xlist and 8 in Xlist and 9 in Xlist:
+        ButtDis()
         print("X win")
     elif 1 in Xlist and 4 in Xlist and 7 in Xlist:
+        ButtDis()
         print("X win")
     elif 2 in Xlist and 5 in Xlist and 8 in Xlist:
+        ButtDis()
         print("X win")
     elif 3 in Xlist and 6 in Xlist and 9 in Xlist:
+        ButtDis()
         print("X win")
     elif 1 in Xlist and 5 in Xlist and 9 in Xlist:
+        ButtDis()
         print("X win")
     elif 3 in Xlist and 5 in Xlist and 7 in Xlist:
+        ButtDis()
         print("X win")
 
     elif 1 in Olist and 2 in Olist and 3 in Olist:
+        ButtDis()
         print("O win")
     elif 4 in Olist and 5 in Olist and 6 in Olist:
+        ButtDis()
         print("O win")
     elif 7 in Olist and 8 in Olist and 9 in Olist:
+        ButtDis()
         print("O win")
     elif 1 in Olist and 4 in Olist and 7 in Olist:
+        ButtDis()
         print("O win")
     elif 2 in Olist and 5 in Olist and 8 in Olist:
+        ButtDis()
         print("O win")
     elif 3 in Olist and 6 in Olist and 9 in Olist:
+        ButtDis()
         print("O win")
     elif 1 in Olist and 5 in Olist and 9 in Olist:
+        ButtDis()
         print("O win")
     elif 3 in Olist and 5 in Olist and 7 in Olist:
+        ButtDis()
         print("O win")
         
 # def gameTableSize():
