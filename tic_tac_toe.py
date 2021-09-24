@@ -222,6 +222,11 @@ def WhoWin():
     elif 3 in Olist and 5 in Olist and 7 in Olist:
         win(player2)
 
+    elif len(Olist) == 4 and len(Xlist) == 5 :
+        win("No one")
+    elif len(Olist) == 5 and len(Xlist) == 4 :
+        win("No one")
+
 def win(winner):
     ButtDis()
     PlayAgainButt()
@@ -229,7 +234,10 @@ def win(winner):
     result = Label(app , text = str , font = ("arial" , 20) )
     result.pack()
     result['bg'] = "#CDD2DE"
-    result.place(x = 150 , y = 370)
+    if winner == "No one":
+        result.place(x = 120 , y = 370)
+    else:
+        result.place(x = 150 , y = 370)
   
 def playerIcon():
     DestroyFrame()
