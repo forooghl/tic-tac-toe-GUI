@@ -2,9 +2,6 @@ from random import choice
 import tkinter
 from tkinter import *
 from tkinter import Button, Tk
-from tkinter import font
-
-from pygame.locals import Color
 
 #clean the frame
 def DestroyFrame():
