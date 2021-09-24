@@ -2,6 +2,9 @@ from random import choice
 import tkinter
 from tkinter import *
 from tkinter import Button, Tk
+from tkinter import font
+
+from pygame.locals import Color
 
 #clean the frame
 def DestroyFrame():
@@ -32,27 +35,33 @@ def Back():
 
 def PlayAgainButt():
     againButton = Button(app , text = "Play again" , command = playGame)
-    # againButton['bg'] = "#FF9AA2"
+    againButton['bg'] = "#ECE7EB"
     againButton.pack()
-    againButton.place(x = 330 , y = 450)
+    againButton.place(x = 310 , y = 450)
 
 #insert Back Button
 def BackButton():
     backButton = Button(app , text = "Back" , command = Back)
-    # backButton['bg'] = "#FF9AA2"
+    backButton['bg'] = "#ECE7EB"
     backButton.pack()
     backButton.place(x = 5 , y = 450)
 
 #game menu
 def menu():
-    start = Button(app , text = "start" , command = playGame)
+    start = Button(app , text = "start" , width = 30 , font = "arial" , command = playGame)
     start.pack()
+    start['bg'] = "#ECE7EB"
+    start.place(x = 50 , y = 140)
 
-    icon = Button(app , text = "icon" , command = playerIcon)
+    icon = Button(app , text = "icon" , width = 30 , font = "arial" , command = playerIcon)
     icon.pack()
-    
-    about = Button(app , text = "about" , command = aboutUs)
+    icon['bg'] = "#ECE7EB"
+    icon.place(x = 50 , y = 185)
+
+    about = Button(app , text = "about" , width = 30 , font = "arial" , command = aboutUs)
     about.pack()
+    about['bg'] = "#ECE7EB"
+    about.place(x = 50 , y = 230)
 
 def playGame():
     global XOButton1 , XOButton2 , XOButton3 
@@ -67,40 +76,49 @@ def playGame():
     
     XOButton1 = Button(app , width = 12 , height = 5 , command = lambda choice = 1 : Game(choice))
     XOButton1.pack()
-    XOButton1.place(x = 22 , y = 5)
+    XOButton1.place(x = 22 , y = 30)
+    XOButton1['bg'] = "#E8EAEE"
 
     XOButton2 = Button(app , width = 12 , height = 5 , command = lambda choice = 2 : Game(choice))
     XOButton2.pack()
-    XOButton2.place(x = 142 , y = 5)
+    XOButton2.place(x = 142 , y = 30)
+    XOButton2['bg'] = "#E8EAEE"
 
     XOButton3 = Button(app , width = 12 , height = 5 , command = lambda choice = 3 : Game(choice))
     XOButton3.pack()
-    XOButton3.place(x = 262 , y = 5)
+    XOButton3.place(x = 262 , y = 30)
+    XOButton3['bg'] = "#E8EAEE"
 
     XOButton4 = Button(app , width = 12 , height = 5 , command = lambda choice = 4 : Game(choice))
     XOButton4.pack()
-    XOButton4.place(x = 22 , y = 100)
+    XOButton4.place(x = 22 , y = 130)
+    XOButton4['bg'] = "#E8EAEE"
 
     XOButton5 = Button(app , width = 12 , height = 5 , command = lambda choice = 5 : Game(choice))
     XOButton5.pack()
-    XOButton5.place(x = 142 , y = 100)
+    XOButton5.place(x = 142 , y = 130)
+    XOButton5['bg'] = "#E8EAEE"
 
     XOButton6 = Button(app , width = 12 , height = 5 , command = lambda choice = 6 : Game(choice))
     XOButton6.pack()
-    XOButton6.place(x = 262 , y = 100)
+    XOButton6.place(x = 262 , y = 130)
+    XOButton6['bg'] = "#E8EAEE"
 
     XOButton7 = Button(app , width = 12 , height = 5 , command = lambda choice = 7 : Game(choice))
     XOButton7.pack()
-    XOButton7.place(x = 22 , y = 195)
+    XOButton7.place(x = 22 , y = 230)
+    XOButton7['bg'] = "#E8EAEE"
 
     XOButton8 = Button(app , width = 12 , height = 5 , command = lambda choice = 8 : Game(choice))
     XOButton8.pack()
-    XOButton8.place(x = 142 , y = 195)
+    XOButton8.place(x = 142 , y = 230)
+    XOButton8['bg'] = "#E8EAEE"
 
     XOButton9 = Button(app , width = 12 , height = 5 , command = lambda choice = 9 : Game(choice)) 
     XOButton9.pack()
-    XOButton9.place(x = 262 , y = 195)
-
+    XOButton9.place(x = 262 , y = 230)
+    XOButton9['bg'] = "#E8EAEE"
+    
     BackButton()
 
 def Game(choice):
@@ -211,33 +229,28 @@ def win(winner):
     ButtDis()
     PlayAgainButt()
     str = winner + " win"
-    result = Label(app , text = str , font = "arial")
+    result = Label(app , text = str , font = ("arial" , 20) )
     result.pack()
-    result.place(x = 170 , y = 350)
-
-# def gameTableSize():
-#     DestroyFrame()
-#     print("3x3 \n4x4 \n5x5")
-#     BackButton()
-
-
-# def setSize(choice):
-#     global Tablesize
-#     if choice == "3x3":
-#         Tablesize = 3
-#     elif choice == "4x4":
-#         Tablesize = 4
-#     elif choice == "5x5":
-#         Tablesize = 5
-        
+    result['bg'] = "#CDD2DE"
+    result.place(x = 150 , y = 370)
+  
 def playerIcon():
     DestroyFrame()
-    XO1 = Button(app , text = "X / O" , command = lambda choice = "X/O" : setIcon(choice))
+    XO1 = Button(app , text = "X / O" , width = 20 , font = "arial" , command = lambda choice = "X/O" : setIcon(choice))
     XO1.pack()
-    XO2 = Button(app , text = "* / #" , command = lambda choice = "*/#" : setIcon(choice))
+    XO1['bg'] = "#ECE7EB"
+    XO1.place(x = 100 , y = 140)
+
+    XO2 = Button(app , text = "* / #" , width = 20 , font = "arial" , command = lambda choice = "*/#" : setIcon(choice))
     XO2.pack()
-    XO3 = Button(app , text = "! / ?" , command = lambda choice = "!/?" : setIcon(choice))
+    XO2['bg'] = "#ECE7EB"
+    XO2.place(x = 100 , y = 185)
+
+    XO3 = Button(app , text = "! / ?" , width = 20 , font = "arial" , command = lambda choice = "!/?" : setIcon(choice))
     XO3.pack()
+    XO3['bg'] = "#ECE7EB"
+    XO3.place(x = 100 , y = 230)
+
     BackButton()
 
 def setIcon(choice):
@@ -254,20 +267,21 @@ def setIcon(choice):
 
 def aboutUs():
     DestroyFrame()
-    text = Text(app)
-    text.insert(INSERT ,"Foroogh L \ninstagram: python._.group")
+    text = Label(app , text = "Foroogh L \n\ninstagram: python._.group" , font = "arial")
     text.pack()
+    text.place(x = 100 , y = 185)
+    text['bg'] = "#CDD2DE"
     BackButton()
 
 main = Tk()
 main.title("Tic Tac Toe")
-main.geometry("400x480")
+main.geometry("380x480")
 main.resizable(width = False, height = False)
 
 app = Frame(main , )
 app.pack()
 app.place(relx = 0 , relheight = 1, relwidth = 1)
-app['bg'] = "pink"
+app['bg'] = "#CDD2DE"
 
 player1 = "X"
 player2 = "O"
