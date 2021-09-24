@@ -30,6 +30,12 @@ def Back():
     DestroyFrame()
     menu()
 
+def PlayAgainButt():
+    againButton = Button(app , text = "Play again" , command = playGame)
+    # againButton['bg'] = "#FF9AA2"
+    againButton.pack()
+    againButton.place(x = 330 , y = 450)
+
 #insert Back Button
 def BackButton():
     backButton = Button(app , text = "Back" , command = Back)
@@ -52,7 +58,13 @@ def playGame():
     global XOButton1 , XOButton2 , XOButton3 
     global XOButton4 , XOButton5 , XOButton6 
     global XOButton7 , XOButton8 , XOButton9
+    global Xlist , Olist
+    
+    Xlist = []
+    Olist = []
+    
     DestroyFrame()
+    
     XOButton1 = Button(app , width = 12 , height = 5 , command = lambda choice = 1 : Game(choice))
     XOButton1.pack()
     XOButton1.place(x = 22 , y = 5)
@@ -162,55 +174,47 @@ def Game(choice):
 
 def WhoWin():
     if 1 in Xlist and 2 in Xlist and 3 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 4 in Xlist and 5 in Xlist and 6 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 7 in Xlist and 8 in Xlist and 9 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 1 in Xlist and 4 in Xlist and 7 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 2 in Xlist and 5 in Xlist and 8 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 3 in Xlist and 6 in Xlist and 9 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 1 in Xlist and 5 in Xlist and 9 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
     elif 3 in Xlist and 5 in Xlist and 7 in Xlist:
-        ButtDis()
-        print("X win")
+        win(player1)
 
     elif 1 in Olist and 2 in Olist and 3 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 4 in Olist and 5 in Olist and 6 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 7 in Olist and 8 in Olist and 9 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 1 in Olist and 4 in Olist and 7 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 2 in Olist and 5 in Olist and 8 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 3 in Olist and 6 in Olist and 9 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 1 in Olist and 5 in Olist and 9 in Olist:
-        ButtDis()
-        print("O win")
+        win(player2)
     elif 3 in Olist and 5 in Olist and 7 in Olist:
-        ButtDis()
-        print("O win")
-        
+        win(player2)
+
+def win(winner):
+    ButtDis()
+    PlayAgainButt()
+    str = winner + " win"
+    result = Label(app , text = str , font = "arial")
+    result.pack()
+    result.place(x = 170 , y = 350)
+
 # def gameTableSize():
 #     DestroyFrame()
 #     print("3x3 \n4x4 \n5x5")
