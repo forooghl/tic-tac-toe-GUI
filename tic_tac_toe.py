@@ -48,17 +48,17 @@ def menu():
     start = Button(app , text = "start" , width = 30 , font = "arial" , command = playGame)
     start.pack()
     start['bg'] = "#ECE7EB"
-    start.place(x = 50 , y = 140)
+    start.place(x = 20 , y = 140)
 
     icon = Button(app , text = "icon" , width = 30 , font = "arial" , command = playerIcon)
     icon.pack()
     icon['bg'] = "#ECE7EB"
-    icon.place(x = 50 , y = 185)
+    icon.place(x = 20 , y = 185)
 
     about = Button(app , text = "about" , width = 30 , font = "arial" , command = aboutUs)
     about.pack()
     about['bg'] = "#ECE7EB"
-    about.place(x = 50 , y = 230)
+    about.place(x = 20 , y = 230)
 
 def playGame():
     global XOButton1 , XOButton2 , XOButton3 
